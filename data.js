@@ -3,7 +3,7 @@ const exercisesData = {
     pullups: [
         {
             id: "pullup-easy",
-            name: "Подтягивания (легко)",
+            name: "Подтягивания к столбу",
             level: 1,
             damage: 5,
             description: "5 обычных подтягиваний",
@@ -11,7 +11,7 @@ const exercisesData = {
         },
         {
             id: "pullup-medium",
-            name: "Подтягивания (средне)",
+            name: "Австралийские подтягивания",
             level: 2,
             damage: 10,
             description: "10 обычных подтягиваний",
@@ -19,7 +19,7 @@ const exercisesData = {
         },
         {
             id: "pullup-hard",
-            name: "Подтягивания (сложно)",
+            name: "Подтягивания",
             level: 3,
             damage: 15,
             description: "15 обычных подтягиваний",
@@ -29,7 +29,7 @@ const exercisesData = {
     pushups: [
         {
             id: "pushup-easy",
-            name: "Отжимания (легко)",
+            name: "Отжимания от столба",
             level: 1,
             damage: 8,
             description: "10 обычных отжиманий",
@@ -37,7 +37,7 @@ const exercisesData = {
         },
         {
             id: "pushup-medium",
-            name: "Отжимания (средне)",
+            name: "Отжимания от перекладины",
             level: 2,
             damage: 15,
             description: "20 обычных отжиманий",
@@ -45,7 +45,7 @@ const exercisesData = {
         },
         {
             id: "pushup-hard",
-            name: "Отжимания (сложно)",
+            name: "Отжимания от пола",
             level: 3,
             damage: 25,
             description: "30 обычных отжиманий или 15 отжиманий на кулаках",
@@ -55,7 +55,7 @@ const exercisesData = {
     squats: [
         {
             id: "squat-easy",
-            name: "Приседания (легко)",
+            name: "Приседания с упором",
             level: 1,
             damage: 10,
             description: "15 обычных приседаний",
@@ -63,7 +63,7 @@ const exercisesData = {
         },
         {
             id: "squat-medium",
-            name: "Приседания (средне)",
+            name: "Приседания",
             level: 2,
             damage: 18,
             description: "30 обычных приседаний",
@@ -71,7 +71,7 @@ const exercisesData = {
         },
         {
             id: "squat-hard",
-            name: "Приседания (сложно)",
+            name: "Выпады",
             level: 3,
             damage: 30,
             description: "50 обычных приседаний или 20 приседаний с прыжком",
@@ -81,7 +81,7 @@ const exercisesData = {
     abs: [
         {
             id: "abs-easy",
-            name: "Пресс (легко)",
+            name: "Скручнивания",
             level: 1,
             damage: 7,
             description: "15 сгибаний пресса",
@@ -89,7 +89,7 @@ const exercisesData = {
         },
         {
             id: "abs-medium",
-            name: "Пресс (средне)",
+            name: "Подъёмы коленей",
             level: 2,
             damage: 12,
             description: "25 сгибаний пресса",
@@ -97,7 +97,7 @@ const exercisesData = {
         },
         {
             id: "abs-hard",
-            name: "Пресс (сложно)",
+            name: "Подъёмы ног",
             level: 3,
             damage: 20,
             description: "40 сгибаний пресса или 30 сек планки",
