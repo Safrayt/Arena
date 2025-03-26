@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BarBosS Арена - Сражение</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="battle-container">
+        <!-- Секция 1: Здоровье монстра -->
+        <div class="monster-health">
+            <div class="health-bar">
+                <div class="health-bar-fill" id="monsterHealthBar"></div>
+            </div>
+            <div class="health-text" id="monsterHealthText">100 / 100</div>
+        </div>
+
+        <!-- Секция 2: Информация о монстре -->
+        <div class="monster-info">
+            <div class="monster-name" id="monsterName">Слизень</div>
+            <div class="monster-level" id="monsterLevel">Уровень 1</div>
+        </div>
+
+        <!-- Секция 3: Изображение монстра -->
+        <div class="monster-image">
+            <img id="monsterImage" src="images/enemies/slime.png" alt="Монстр">
+        </div>
+
+        <!-- Секция 4: Выбранные упражнения -->
+        <div class="exercise-selection">
+            <div class="exercise-selection-title">Выберите упражнение для атаки</div>
+            <div class="exercise-selection-list" id="exerciseSelectionList">
+                <!-- Здесь будут отображаться упражнения для выбора -->
+            </div>
+        </div>
+        
+        <div class="reps-counter" id="repsCounter" style="display: none;">
+            <div class="reps-title">Количество повторений:</div>
+            <div class="reps-controls">
+                <button class="reps-btn" id="decreaseReps">-</button>
+                <span class="reps-value" id="repsValue">5</span>
+                <button class="reps-btn" id="increaseReps">+</button>
+            </div>
+        </div>
+
+        <!-- Кнопка для атаки -->
+        <button class="attack-btn" id="attackButton" disabled>Атаковать</button>
+
+        <div class="total-damage">
+            Урон: <span id="calculatedDamage">0</span>
+        </div>
+
+        <!-- Кнопка для возврата -->
+        <button class="return-btn" id="returnButton" style="display: none;">Вернуться</button>
+
+        <div class="victory-overlay" id="victoryOverlay">
+            <div class="victory-message">ПОБЕДА!</div>
+        </div>
+</div>
+
+    <script src="data.js"></script>
+    <script src="battle.js"></script>
+</body>
+</html>

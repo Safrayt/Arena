@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BarBosS Арена</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>BarBosS Арена</h1>
+            <p>Выберите упражнения</p>
+        </div>
+        
+        <div class="exercises-grid">
+            <div class="exercise-column">
+                <div class="column-title">Подтягивания</div>
+                
+                <div class="exercise-item" data-type="pullups" data-level="1" data-damage="5" data-name="Подтягивания (легко)" onclick="selectExercise(this)">
+                    <div class="exercise-icon">
+                        <img src="images/exercises/pullup-easy.png" alt="Подтягивания легко">
+                    </div>
+                    <div class="exercise-label">5 урона</div>
+                    <div class="level-indicator">
+                        <div class="level-dot"></div>
+                    </div>
+                </div>
+                
+                <div class="exercise-item" data-type="pullups" data-level="2" data-damage="10" data-name="Подтягивания (средне)" onclick="selectExercise(this)">
+                    <div class="exercise-icon">
+                        <img src="images/exercises/pullup-medium.png" alt="Подтягивания средне">
+                    </div>
+                    <div class="exercise-label">10 урона</div>
+                    <div class="level-indicator">
+                        <div class="level-dot"></div>
+                        <div class="level-dot"></div>
+                    </div>
+                </div>
+                
+                <div class="exercise-item" data-type="pullups" data-level="3" data-damage="15" data-name="Подтягивания (сложно)" onclick="selectExercise(this)">
+                    <div class="exercise-icon">
+                        <img src="images/exercises/pullup-hard.png" alt="Подтягивания сложно">
+                    </div>
+                    <div class="exercise-label">15 урона</div>
+                    <div class="level-indicator">
+                        <div class="level-dot"></div>
+                        <div class="level-dot"></div>
+                        <div class="level-dot"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="exercise-column">
+                <div class="column-title">Отжимания</div>
+                
+                <div class="exercise-item" data-type="pushups" data-level="1" data-damage="8" data-name="Отжимания (легко)" onclick="selectExercise(this)">
+                    <div class="exercise-icon">
+                        <img src="images/exercises/pushup-easy.png" alt="Отжимания легко">
+                    </div>
+                    <div class="exercise-label">8 урона</div>
+                    <div class="level-indicator">
+                        <div class="level-dot"></div>
+                    </div>
+                </div>
+                
+                <div class="exercise-item" data-type="pushups" data-level="2" data-damage="15" data-name="Отжимания (средне)" onclick="selectExercise(this)">
+                    <div class="exercise-icon">
+                        <img src="images/exercises/pushup-medium.png" alt="Отжимания средне">
+                    </div>
+                    <div class="exercise-label">15 урона</div>
+                    <div class="level-indicator">
+                        <div class="level-dot"></div>
+                        <div class="level-dot"></div>
+                    </div>
+                </div>
+                
+                <div class="exercise-item" data-type="pushups" data-level="3" data-damage="25" data-name="Отжимания (сложно)" onclick="selectExercise(this)">
+                    <div class="exercise-icon">
+                        <img src="images/exercises/pushup-hard.png" alt="Отжимания сложно">
+                    </div>
+                    <div class="exercise-label">25 урона</div>
+                    <div class="level-indicator">
+                        <div class="level-dot"></div>
+                        <div class="level-dot"></div>
+                        <div class="level-dot"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="exercise-column">
+                <div class="column-title">Приседания</div>
+                
+                <div class="exercise-item" data-type="squats" data-level="1" data-damage="10" data-name="Приседания (легко)" onclick="selectExercise(this)">
+                    <div class="exercise-icon">
+                        <img src="images/exercises/squat-easy.png" alt="Приседания легко">
+                    </div>
+                    <div class="exercise-label">10 урона</div>
+                    <div class="level-indicator">
+                        <div class="level-dot"></div>
+                    </div>
+                </div>
+                
+                <div class="exercise-item" data-type="squats" data-level="2" data-damage="18" data-name="Приседания (средне)" onclick="selectExercise(this)">
+                    <div class="exercise-icon">
+                        <img src="images/exercises/squat-medium.png" alt="Приседания средне">
+                    </div>
+                    <div class="exercise-label">18 урона</div>
+                    <div class="level-indicator">
+                        <div class="level-dot"></div>
+                        <div class="level-dot"></div>
+                    </div>
+                </div>
+                
+                <div class="exercise-item" data-type="squats" data-level="3" data-damage="30" data-name="Приседания (сложно)" onclick="selectExercise(this)">
+                    <div class="exercise-icon">
+                        <img src="images/exercises/squat-hard.png" alt="Приседания сложно">
+                    </div>
+                    <div class="exercise-label">30 урона</div>
+                    <div class="level-indicator">
+                        <div class="level-dot"></div>
+                        <div class="level-dot"></div>
+                        <div class="level-dot"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="exercise-column">
+                <div class="column-title">Пресс</div>
+                
+                <div class="exercise-item" data-type="abs" data-level="1" data-damage="7" data-name="Пресс (легко)" onclick="selectExercise(this)">
+                    <div class="exercise-icon">
+                        <img src="images/exercises/abs-easy.png" alt="Пресс легко">
+                    </div>
+                    <div class="exercise-label">7 урона</div>
+                    <div class="level-indicator">
+                        <div class="level-dot"></div>
+                    </div>
+                </div>
+                
+                <div class="exercise-item" data-type="abs" data-level="2" data-damage="12" data-name="Пресс (средне)" onclick="selectExercise(this)">
+                    <div class="exercise-icon">
+                        <img src="images/exercises/abs-medium.png" alt="Пресс средне">
+                    </div>
+                    <div class="exercise-label">12 урона</div>
+                    <div class="level-indicator">
+                        <div class="level-dot"></div>
+                        <div class="level-dot"></div>
+                    </div>
+                </div>
+                
+                <div class="exercise-item" data-type="abs" data-level="3" data-damage="20" data-name="Пресс (сложно)" onclick="selectExercise(this)">
+                    <div class="exercise-icon">
+                        <img src="images/exercises/abs-hard.png" alt="Пресс сложно">
+                    </div>
+                    <div class="exercise-label">20 урона</div>
+                    <div class="level-indicator">
+                        <div class="level-dot"></div>
+                        <div class="level-dot"></div>
+                        <div class="level-dot"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="button-container">
+            <div class="selected-exercises-panel" id="selectedExercisesPanel">
+                <div class="selected-exercises-title">Выбранные упражнения</div>
+                <div class="selected-exercises-list" id="selectedExercisesList">
+                    <!-- Здесь будут отображаться выбранные упражнения -->
+                </div>
+                <div class="total-damage">
+                    Общий урон: <span class="total-damage-value" id="totalDamageValue">0</span>
+                </div>
+            </div>
+            
+            <button class="start-battle-btn" id="startBattle">Начать сражение</button>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

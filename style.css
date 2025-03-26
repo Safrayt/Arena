@@ -1,0 +1,578 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.game-container {
+    width: 100%;
+    max-width: 420px;
+    height: 90vh;
+    background-color: #1e1e2e;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    color: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+}
+
+.game-header {
+    text-align: center;
+    padding: 24px 16px;
+    background-color: #292945;
+    border-bottom: 2px solid #3d3d5c;
+}
+
+.game-header h1 {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.exercises-grid {
+    display: flex;
+    justify-content: space-around;
+    flex: 1;
+    padding: 16px;
+}
+
+.exercise-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 22%;
+}
+
+.column-title {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    text-align: center;
+    color: #8a8aff;
+}
+
+.exercise-item {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid transparent;
+    transition: all 0.2s ease;
+    opacity: 0.8;
+}
+
+.exercise-item.selected {
+    border-color: #32cd32;
+    opacity: 1;
+    transform: scale(1.05);
+    box-shadow: 0 0 12px rgba(50, 205, 50, 0.6);
+}
+
+.exercise-icon {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #34344a;
+    border-radius: 6px;
+}
+
+.exercise-icon img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+}
+
+.exercise-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 4px;
+    font-size: 10px;
+    text-align: center;
+    color: #ff6b6b;
+    font-weight: bold;
+}
+
+.level-indicator {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    display: flex;
+}
+
+.level-dot {
+    width: 4px;
+    height: 4px;
+    background-color: #fff;
+    border-radius: 50%;
+    margin-left: 2px;
+}
+
+.button-container {
+    padding: 16px 16px 24px;
+    text-align: center;
+}
+
+.start-battle-btn {
+    background-color: #8a8aff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 14px 28px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.start-battle-btn.active {
+    background-color: #6a5acd;
+    opacity: 1;
+    box-shadow: 0 4px 12px rgba(106, 90, 205, 0.5);
+}
+
+.start-battle-btn.active:hover {
+    background-color: #5f4bb6;
+    transform: translateY(-2px);
+}
+
+.selected-exercises-panel {
+    background-color: #292945;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 16px;
+    display: none;
+}
+
+.selected-exercises-panel.visible {
+    display: block;
+}
+
+.selected-exercises-title {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #8a8aff;
+    text-align: center;
+}
+
+.selected-exercises-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.selected-exercise-item {
+    width: 48%;
+    background-color: #34344a;
+    border-radius: 6px;
+    padding: 8px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.exercise-name {
+    font-size: 12px;
+}
+
+.exercise-damage {
+    font-size: 12px;
+    color: #ff6b6b;
+    font-weight: bold;
+}
+
+.total-damage {
+    text-align: right;
+    font-size: 14px;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid #3d3d5c;
+}
+
+.total-damage-value {
+    color: #ff6b6b;
+    font-weight: bold;
+}
+
+/* Стили для выбора упражнения */
+.exercise-selection {
+    background-color: #292945;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 16px;
+}
+
+.exercise-selection-title {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #8a8aff;
+    text-align: center;
+}
+
+.exercise-selection-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.exercise-selection-item {
+    width: 48%;
+    background-color: #34344a;
+    border-radius: 6px;
+    padding: 8px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.exercise-selection-item.selected {
+    border: 2px solid #32cd32;
+    transform: scale(1.05);
+    box-shadow: 0 0 12px rgba(50, 205, 50, 0.6);
+}
+
+/* Стили для кнопки "Вернуться" */
+.return-btn {
+    background-color: #ff4d4d; /* Красный цвет */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 14px 28px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    opacity: 1;
+    transition: all 0.3s ease;
+    width: 100%;
+    display: none; /* По умолчанию скрыта */
+}
+
+.return-btn:hover {
+    background-color: #ff1a1a; /* Более яркий красный при наведении */
+    transform: translateY(-2px);
+}
+
+
+/* Анимация удара для монстра */
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    50% { transform: translateX(10px); }
+    75% { transform: translateX(-10px); }
+    100% { transform: translateX(0); }
+}
+
+.monster-image img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    transition: transform 0.2s ease; /* Плавное возвращение */
+}
+
+/* Класс для анимации удара */
+.monster-hit {
+    animation: shake 0.3s ease-in-out;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Стили для экрана сражения */
+.battle-container {
+    width: 100%;
+    max-width: 420px;
+    height: 90vh;
+    background-color: #1e1e2e;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    color: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+}
+
+.monster-health {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.health-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #34344a;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.health-bar-fill {
+    height: 100%;
+    background-color: #ff6b6b;
+    width: 100%;
+    transition: width 0.3s ease;
+}
+
+.health-text {
+    font-size: 12px;
+    margin-top: 4px;
+    color: #ff6b6b;
+}
+
+.monster-info {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.monster-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #8a8aff;
+}
+
+.monster-level {
+    font-size: 14px;
+    color: #8a8aff;
+}
+
+.monster-image {
+    text-align: center;
+}
+
+.monster-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.selected-exercises {
+    background-color: #292945;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 16px;
+}
+
+.selected-exercises-title {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #8a8aff;
+    text-align: center;
+}
+
+.selected-exercises-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.selected-exercise-item {
+    width: 48%;
+    background-color: #34344a;
+    border-radius: 6px;
+    padding: 8px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.exercise-name {
+    font-size: 12px;
+}
+
+.exercise-damage {
+    font-size: 12px;
+    color: #ff6b6b;
+    font-weight: bold;
+}
+
+.attack-btn {
+    background-color: #8a8aff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 14px 28px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    opacity: 1;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.attack-btn:hover {
+    background-color: #6a5acd;
+    transform: translateY(-2px);
+}
+
+
+
+
+
+
+
+/* Стили для счётчика повторений */
+.reps-counter {
+    background-color: #292945;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.reps-title {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #8a8aff;
+}
+
+.reps-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.reps-btn {
+    background-color: #6a5acd;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.reps-btn:hover {
+    background-color: #5f4bb6;
+    transform: scale(1.1);
+}
+
+.reps-value {
+    font-size: 18px;
+    font-weight: bold;
+    min-width: 30px;
+    text-align: center;
+}
+
+
+.total-damage {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.total-damage span {
+    color: #ff6b6b;
+    font-weight: bold;
+}
+
+
+/* Стили для сообщения о победе */
+.victory-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+.victory-overlay.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.victory-message {
+    font-size: 72px;
+    font-weight: bold;
+    color: #ffd700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.5); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.victory-overlay.show {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+
+
+.game-container, .battle-container {
+    width: 100%;
+    max-width: 420px;
+    height: calc(var(--vh, 1vh) * 100); /* Динамическая высота */
+    max-height: 100vh;
+    padding-bottom: 80px; /* Место для нижних кнопок */
+    box-sizing: border-box;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch; /* Плавный скролл на iOS */
+}
+
+/* Для экрана битвы добавьте */
+.battle-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
